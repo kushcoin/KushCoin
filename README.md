@@ -10,7 +10,7 @@ Windows-
 
 1.Install the package 
 
-included.(kushcoin-0.8.6-win32-setup)
+included.(kushcoin-0.8.6-win32-setup the "lite" setup is a easy wallet setup, the full package has kushcoind etc.)
 
 Using windows file explorer (or equal) go to the 
 
