@@ -1,6 +1,6 @@
-KushCoin 
+KushCoin http://KushCo.in
 ========
-###Check Above for Releases
+###Check the "releases" link above for downloads
 #####KushCoin 2014 "the highest form of currency"
 
 ####Qucik Help & Install Guide
