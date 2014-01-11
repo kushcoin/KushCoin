@@ -1,8 +1,8 @@
-KushCoin
+KushCoin - Check above for a link to "releases" for downloads
 ========
 
 KushCoin Crypto-Currency
-README
+Quick README and Help Guide
 
 KushCoin 2014
 
