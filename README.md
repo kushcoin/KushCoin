@@ -1,10 +1,9 @@
-KushCoin - Check above for a link to "releases" for downloads
+KushCoin 
 ========
+###Check Above for Releases
+#####KushCoin 2014 "the highest form of currency"
 
-KushCoin Crypto-Currency
-Quick README and Help Guide
-
-KushCoin 2014
+####Qucik Help & Install Guide
 
 Windows-
 
@@ -37,20 +36,26 @@ processed by the system, it can be opened in notepad,
 
 and read normally.
 
-KushCoin's port is 9385, so open that up on your 
+KushCoin's port is 9385, so open that up on your firewall.
 
-firewall.
+-Windows firewall
 
-Windows firewall
-Advanced settings
-Add rule
-Allow
-Ports etc.
-9385
-In & Out (two rules)
+-Advanced settings
 
-Linux
+-Add rule
 
+-Allow
+
+-Ports etc.
+
+-9385
+
+-In & Out (two rules)
+
+
+
+
+![KushCoin](https://cache.nebula.phx3.secureserver.net/obj/NjE4NEQ4ODA2MEVFQ0ZFQTAxQUQ6YmJiOGNjZGU4NjFkZmZlOGE0MzliMzgxNWEyMTI4ZTY=)
 
 
 
