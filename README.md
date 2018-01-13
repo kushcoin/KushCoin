@@ -1,4 +1,4 @@
-KushCoin http://KushCo.in
+KushCoin http://Kush-Co.in
 ========
 ###Check the "releases" link above for downloads
 #####KushCoin 2014 "the highest form of currency"
