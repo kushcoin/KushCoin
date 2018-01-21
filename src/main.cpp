@@ -1076,14 +1076,14 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     int64 nSubsidy = 4200 * COIN;
 
-    // Subsidy is cut in half every 50000 blocks, which will occur approximately every 4 years
-    nSubsidy >>= (nHeight / 50000);
+    // Subsidy is cut in half every 25000 blocks, which will occur approximately every 125 days
+    nSubsidy >>= (nHeight / 25000);
 
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 14 * 24 * 60 * 60; // two weeks
-static const int64 nTargetSpacing = 10 * 60;
+static const int64 nTargetTimespan = 260 * 60; // 4 Hour 20 minutes
+static const int64 nTargetSpacing = 10 * 26; // 4:20 Min/Seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 //
@@ -1101,10 +1101,10 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     bnResult.SetCompact(nBase);
     while (nTime > 0 && bnResult < bnProofOfWorkLimit)
     {
-        // Maximum 400% adjustment...
-        bnResult *= 4;
-        // ... in best-case exactly 4-times-normal target time
-        nTime -= nTargetTimespan*4;
+        // Maximum 1000% adjustment...Now to accomodate the Asics transition
+        bnResult *= 10;
+        // ... in best-case exactly 10-times-normal target time
+        nTime -= nTargetTimespan*10;
     }
     if (bnResult > bnProofOfWorkLimit)
         bnResult = bnProofOfWorkLimit;
@@ -1142,7 +1142,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         return pindexLast->nBits;
     }
 
-    // Go back by what we want to be 14 days worth of blocks
+    // Go back by what we want to be 1 day worth of blocks
     const CBlockIndex* pindexFirst = pindexLast;
     for (int i = 0; pindexFirst && i < nInterval-1; i++)
         pindexFirst = pindexFirst->pprev;
@@ -1151,10 +1151,10 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     // Limit adjustment step
     int64 nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
     printf("  nActualTimespan = %"PRI64d"  before bounds\n", nActualTimespan);
-    if (nActualTimespan < nTargetTimespan/4)
-        nActualTimespan = nTargetTimespan/4;
-    if (nActualTimespan > nTargetTimespan*4)
-        nActualTimespan = nTargetTimespan*4;
+    if (nActualTimespan < nTargetTimespan/10)
+        nActualTimespan = nTargetTimespan/10;
+    if (nActualTimespan > nTargetTimespan*10)
+        nActualTimespan = nTargetTimespan*10;
 
     // Retarget
     CBigNum bnNew;
